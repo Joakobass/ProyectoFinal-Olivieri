@@ -1,0 +1,66 @@
+.imagen-carta {
+    height: 200px;
+    background-color: green;
+    object-fit: fill;
+}
+
+.img-chango{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.alert-danger{
+    width: 100%;
+    text-align: center;
+}
+
+
+.card{
+    box-shadow: $sombra-cajas;
+    background-color: #ffffff80;
+    margin: 10px;
+}
+
+.btn-producto {
+    @include botones;
+}
+
+.titulo-productos{
+    @include titulos;
+}
+
+.card-header{
+    font-family: $font3;
+    font-weight: 900;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+.card-text{
+    font-family: $font4;
+    font-weight: 300;
+}
+
+.buscador{
+    width: 400px;
+    height: 40px;
+    border: $color-general2 solid 3px;
+    border-radius: 10px;
+    padding: 0 13px 0 13px;
+}
+
+:focus{
+    box-shadow: 0px 0px 15px 4px;
+    border-color: $color-general3;
+}
+::placeholder{
+    text-align: center;
+}
+
+.container-buscador{
+    display: flex;
+    justify-content: center;
+}

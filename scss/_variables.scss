@@ -1,0 +1,36 @@
+
+// fuentes
+$font1: Kanit, sans-serif;
+$font2: Oswald, sans-serif;
+$font3: 'Bebas Neue', sans-serif;
+$font4: Poppins, sans-serif;
+
+// colores
+$color-general1: #1b512d;
+$color-general2: #36066a;
+$color-general3: #00d700;
+$sombra-cajas: 5px 5px 10px black;
+$color-titulos: #36066a;
+
+@mixin titulos {
+    color: $color-titulos;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 0px 0px 10px #ffffff;
+    margin-top: 15px;
+    margin-bottom: 0;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@mixin botones {
+    background-color: #008000;
+    border-color: #008000;
+    transition: all 0.5;
+    &:hover, &:active{
+        background-color: #005200 !important;
+        border-color: #005200 !important;
+    }
+}

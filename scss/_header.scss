@@ -1,0 +1,51 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-general2;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 5px 8px 2px rgba(0, 0, 0, 0.5);
+}
+
+.burguer {
+    font-size: 30px;
+    color: #d1d1d1;
+}
+
+.boton-barras {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+}
+
+.show,
+.collapsing {
+    padding-top: 4.5rem;
+}
+
+.logoHeader {
+    height: 100px;
+    width: 100px;
+    background-image: url(img/logo-header.png);
+    background-size: contain;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.nav-link {
+    // text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 800;
+   // text-decoration: none;
+    color: #158b2d;
+}
