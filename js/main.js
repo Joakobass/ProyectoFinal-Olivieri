@@ -1,5 +1,3 @@
-//FALTA ACUMULAR EL PRODUCTO CUANDO SE SELECCIONA VARIAS VECES
-
 const contenedor = document.querySelector("#cartas-productos")
 const inputBuscar = document.querySelector("input[type=search]")
 const imgChango = document.querySelector("img.img-chango")
