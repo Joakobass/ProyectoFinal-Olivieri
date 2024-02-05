@@ -52,7 +52,7 @@ const productos = [{
 {
     codigo: 107,
     nombre: 'Picador 2P acrílico',
-    imagen: imagenesProductos.src = "../img/productos/precio8.jpg",
+    imagen: imagenesProductos.src = "img/productos/precio8.jpg",
     precio: 1500,
     cantidad: 1,
 },
