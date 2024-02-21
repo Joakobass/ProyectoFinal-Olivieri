@@ -6,12 +6,12 @@
     border: 10px solid $color-general2;
     margin: 50px auto;
     background-color: bisque;
+    border-radius: 15px;
 }
 
 .prod-chango {
-
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
     padding: 20px 0;
@@ -23,6 +23,10 @@
     font-size: 20px;
     font-weight: 700;
     padding-left: 20px;
+}
+
+.mostrar-advertencia {
+    display: none !important;
 }
 
 .img-box {
@@ -47,45 +51,66 @@
     display: flex;
     justify-content: space-evenly;
     padding-top: 10px;
-    font-size: 10px;
+    
 }
 
-.cart-title{
+.titulos h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.cart-title {
     @include titulos;
     font-size: 24px;
     line-height: 3;
 
 }
 
-.delete{
+.delete {
     background-color: unset;
     border: unset;
     font-size: 25px;
     text-shadow: 1px 1px 6px black;
 }
 
-#chango-vacio{
+#chango-vacio {
     text-align: center;
     padding: 20px 0;
 }
 
-.precio{
+.precio {
     font-size: 20px;
 }
 
-.suma-total{
+.suma-total {
     text-align: right;
     padding-right: 50px;
 }
 
-.comprar {
+.compra {
     @include botones;
     width: 50%;
     margin: 10px auto;
+    text-align: center;
 }
 
-.alerta-compra{
+#totales {
+    display: flex;
+    flex-direction: column;
+}
+
+.alerta-compra {
     padding: 80px;
     margin: 40px;
     text-align: center;
+}
+
+.alert-success{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    text-align: center;
+    font-size: 20px;
+    height: 200px;
+    justify-content: center;    
 }

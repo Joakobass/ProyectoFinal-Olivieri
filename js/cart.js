@@ -1,12 +1,10 @@
-//FALTA CREAR BOTON DE COMPRAR.
-
 const tablaCart = document.querySelector("div.container-chango")
 const imgChango = document.querySelector("img.img-chango")
 const carritoVacio = document.getElementById("chango-vacio")
-
+const cart = carritoAlmacenado()
 let idProducto = 0
 
-const cart = carritoAlmacenado()
+crearCarrito()
 
 function carritoAlmacenado() {
     return JSON.parse(localStorage.getItem("carrito"))
@@ -29,24 +27,17 @@ imgChango.addEventListener("mousemove", () => {
 })
 
 function comprar() {
-    const btnComprar = document.querySelector("button.comprar")
+    const btnComprar = document.querySelector("button.compra")
 
-    btnComprar.addEventListener("click", () => {
-        
-        tablaCart.innerHTML =   `<div>
-                                    <h4 class="alert alert-success alerta-compra">Muchas gracias por comprar en Tukson Growshop!</h4>
-                                </div>`
-
-        localStorage.clear()
-    })
-
+    btnComprar.addEventListener("click", () => alertaComprar())
 }
+
 function sumarTotal() {
+
     let total = 0
-    cart.forEach((prod) => {
-        total += (prod.cantidad * prod.precio)
-    })
+    cart.forEach((prod) => total += (prod.cantidad * prod.precio))
     return total
+
 }
 
 function activarBotonBorrar() {
@@ -54,34 +45,94 @@ function activarBotonBorrar() {
 
     for (let boton of btnDelete) {
         boton.addEventListener("click", () => {
-            const articuloSeleccionado = cart.findIndex((producto) => producto.codigo === parseInt(boton.id))
+
+            const indiceProductoABorrar = cart.findIndex((producto) => producto.codigo === parseInt(boton.id))
+            const producto = cart.find((articulo) => articulo.codigo === parseInt(boton.id))
             const prodChango = document.querySelectorAll("div.prod-chango")
-            const artAborrar = document.getElementById(prodChango[articuloSeleccionado].id)
-            artAborrar.remove()
-            cart.splice(articuloSeleccionado, 1)
+            const artAborrar = document.getElementById(prodChango[indiceProductoABorrar].id)
+
+            if (producto.cantidad !== 1) {
+                producto.cantidad--
+                const cantNueva = prodChango[indiceProductoABorrar].children[2]
+                const precio = prodChango[indiceProductoABorrar].children[3]
+                cantNueva.textContent = producto.cantidad
+                precio.textContent = "$ " + (producto.cantidad * producto.precio).toLocaleString()
+            } else {
+
+                artAborrar.remove()
+                cart.splice(indiceProductoABorrar, 1)
+                notificar(`${producto.nombre.toUpperCase()} ha sido eliminado del carrito`)
+            }
             localStorage.setItem("carrito", JSON.stringify(cart))
-            location.reload()
+
+            const textoSuma = document.getElementById("suma-cart")
+            textoSuma.textContent = `TOTAL $ ${sumarTotal().toLocaleString()}`
+
+            cart.length <= 0 && crearAdvertenciaCarroVacio()
         })
     }
 }
 
+function notificar(mensaje) {
+    Toastify({
+        text: mensaje,
+        duration: 2000,
+        gravity: "top",
+        position: "center",
+        style: {
+            background: "#00d700",
+            color: "#36066a"
+        }
+    }).showToast()
+}
 
-
-if (cart.length > 0) {
-
-    carritoVacio.remove()
-    cart.forEach((articulo) => tablaCart.innerHTML += crearFilaProducto(articulo))
-
-    tablaCart.innerHTML += `<h2 class="suma-total">TOTAL $</h2>
-                            <button class="comprar btn btn-primary">Comprar</button>`
-    const suma = document.querySelector("h2.suma-total")
-    suma.innerHTML += sumarTotal().toLocaleString("es-Ar")
-
-    activarBotonBorrar()
-    comprar()
+function alertaComprar() {
+    Swal.fire({
+        title: "¿Está seguro que desea confirmar la compra?",
+        icon: "question",
+        showCancelButton: true,
+        showCloseButton: true
+    }).then((resultado) => {
+        if (resultado.isConfirmed) {
+            Swal.fire({
+                text: "Gracias por comprar y confiar en nosotros",
+                icon: "success",
+                title: "Tukson Growshop"
+            })
+            localStorage.removeItem("carrito")
+            const containerCart = document.querySelector("div.container-chango")
+            containerCart.innerHTML = `<div class="alert alert-success">
+                                        <p>La compra se ha
+                                        efectuado satisfactoriamente.</p>
+                                        <p>En 5 segundos seras redirigido a la página de productos</p>
+                                        </div>`
+            setTimeout(() => location.href = "index.html", 5000)
+        }
+    });
 
 }
 
+function crearCarrito() {
+    if (cart !== null) {
 
+        if (cart.length > 0) {
+            cart.forEach((articulo) => tablaCart.innerHTML += crearFilaProducto(articulo))
+            tablaCart.innerHTML += `<div id="totales">
+                                <h2 id="suma-cart" class="suma-total">TOTAL $ ${sumarTotal().toLocaleString()}</h2>
+                                <button class="compra btn btn-primary">Comprar</button>
+                                </div>`
 
+            activarBotonBorrar()
 
+            comprar()
+        }
+    } else {
+        document.getElementById("chango-vacio").classList.remove("mostrar-advertencia")
+    }
+}
+
+function crearAdvertenciaCarroVacio() {
+
+    document.getElementById("totales").classList.add("mostrar-advertencia")
+    document.getElementById("chango-vacio").classList.remove("mostrar-advertencia")
+}

@@ -1,0 +1,86 @@
+[
+    {
+        "codigo": 100,
+        "nombre": "Encendedor catalítico",
+        "imagen": "img/productos/precio1.jpg",
+        "precio": 5000,
+        "cantidad": 1
+    },
+    {
+        "codigo": 101,
+        "nombre": "Picador Burguer",
+        "imagen": "img/productos/precio2.jpg",
+        "precio": 12000,
+        "cantidad": 1
+    },
+    {
+        "codigo": 102,
+        "nombre": "Armador auto tabaco",
+        "imagen": "img/productos/precio3.jpg",
+        "precio": 10000,
+        "cantidad": 1
+    },
+    {
+        "codigo": 103,
+        "nombre": "Bandeja vidrio mini",
+        "imagen": "img/productos/precio4.jpg",
+        "precio": 10000,
+        "cantidad": 1
+    },
+    {
+        "codigo": 104,
+        "nombre": "Miracle",
+        "imagen": "img/productos/precio5.jpg",
+        "precio": 5000,
+        "cantidad": 1
+    },
+    {
+        "codigo": 105,
+        "nombre": "Papelillo elements 1/4",
+        "imagen": "img/productos/precio6.jpg",
+        "precio": 500,
+        "cantidad": 1
+    },
+    {
+        "codigo": 106,
+        "nombre": "Cajita papelillo",
+        "imagen": "img/productos/precio7.jpg",
+        "precio": 7000,
+        "cantidad": 1
+    },
+    {
+        "codigo": 107,
+        "nombre": "Picador 2P acrílico",
+        "imagen": "img/productos/precio8.jpg",
+        "precio": 1500,
+        "cantidad": 1
+    },
+    {
+        "codigo": 108,
+        "nombre": "Tabaco sayri 50gr",
+        "imagen": "img/productos/precio9.jpg",
+        "precio": 3000,
+        "cantidad": 1
+    },
+    {
+        "codigo": 109,
+        "nombre": "Clippers (c/u)",
+        "imagen": "img/productos/precio10.jpg",
+        "precio": 1000,
+        "cantidad": 1
+    },
+    {
+        "codigo": 110,
+        "nombre": "Pica llaveros mini",
+        "imagen": "img/productos/precio11.jpg",
+        "precio": 4000,
+        "cantidad": 1
+    },
+    {
+        "codigo": 111,
+        "nombre": "Cenicero de resina",
+        "imagen": "img/productos/precio12.jpg",
+        "precio": 7500,
+        "cantidad": 1
+    }
+]

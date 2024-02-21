@@ -110,6 +110,7 @@ footer div a:hover {
   height: 50px;
   margin-right: 20px;
   cursor: pointer;
+  position: relative;
 }
 
 .alert-danger {
@@ -147,11 +148,15 @@ footer div a:hover {
 }
 
 .card-header {
-  font-family: "Bebas Neue", sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.text-title {
+  font-family: "Bebas Neue", sans-serif;
+  margin: 0;
 }
 
 .card-text {
@@ -181,6 +186,24 @@ footer div a:hover {
   justify-content: center;
 }
 
+.contador-not {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #36066a;
+  background-color: #cfcfcf;
+  padding: 0px 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0;
+  position: absolute;
+  top: 16px;
+  right: 10px;
+}
+
+.oculto {
+  display: none;
+}
+
 .container-chango {
   display: flex;
   flex-direction: column;
@@ -189,11 +212,12 @@ footer div a:hover {
   border: 10px solid #36066a;
   margin: 50px auto;
   background-color: bisque;
+  border-radius: 15px;
 }
 
 .prod-chango {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   padding: 20px 0;
@@ -205,6 +229,10 @@ footer div a:hover {
   font-size: 20px;
   font-weight: 700;
   padding-left: 20px;
+}
+
+.mostrar-advertencia {
+  display: none !important;
 }
 
 .img-box {
@@ -229,7 +257,11 @@ footer div a:hover {
   display: flex;
   justify-content: space-evenly;
   padding-top: 10px;
-  font-size: 10px;
+}
+
+.titulos h3 {
+  margin: 0;
+  font-size: 1.3rem;
 }
 
 .cart-title {
@@ -268,22 +300,38 @@ footer div a:hover {
   padding-right: 50px;
 }
 
-.comprar {
+.compra {
   background-color: #008000;
   border-color: #008000;
   transition: all 0.5;
   width: 50%;
   margin: 10px auto;
+  text-align: center;
 }
-.comprar:hover, .comprar:active {
+.compra:hover, .compra:active {
   background-color: #005200 !important;
   border-color: #005200 !important;
+}
+
+#totales {
+  display: flex;
+  flex-direction: column;
 }
 
 .alerta-compra {
   padding: 80px;
   margin: 40px;
   text-align: center;
+}
+
+.alert-success {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  text-align: center;
+  font-size: 20px;
+  height: 200px;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 1440px) {
